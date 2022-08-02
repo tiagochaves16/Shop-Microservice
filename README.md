@@ -2,7 +2,7 @@
 
 ## 🚀 Começando . . .
 
-O objetivo principal desse projeto, vou agregar conhecimentos voltado a microserviços, utilizando dotnet 6.0
+O objetivo principal desse projeto, é agregar conhecimentos voltado a microserviços, utilizando dotnet 6.0
 
 ## ✒️ Dev
 
