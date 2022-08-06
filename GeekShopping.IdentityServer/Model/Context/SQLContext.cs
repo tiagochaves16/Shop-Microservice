@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.IdentityServer.Model.Context
 {
-
     public class SQLContext : IdentityDbContext<ApplicationUser>
     {
         public SQLContext()

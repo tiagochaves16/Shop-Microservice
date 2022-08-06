@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Shopping_Product_API.Data.ValueObjects;
 using Shopping_Product_API.Repository;
+using Shopping_Product_API.Utils;
 
 namespace Shopping_Product_API.Controllers
 {
@@ -16,6 +18,7 @@ namespace Shopping_Product_API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<ProductVO>>> GetAll()
         {
             var product = await _repository.GetAll();
@@ -34,6 +37,7 @@ namespace Shopping_Product_API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _repository.GetById(id);
@@ -42,6 +46,7 @@ namespace Shopping_Product_API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ProductVO>> Post([FromBody] ProductVO vo)
         {
             if(vo == null) return BadRequest();
@@ -50,6 +55,7 @@ namespace Shopping_Product_API.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<ActionResult<ProductVO>> Update([FromBody] ProductVO vo)
         {
             if (vo == null) return BadRequest();
@@ -58,6 +64,7 @@ namespace Shopping_Product_API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = Role.Admin)]
         public async Task<ActionResult> Delete(long id)
         {
             var status = await _repository.Delete(id);
