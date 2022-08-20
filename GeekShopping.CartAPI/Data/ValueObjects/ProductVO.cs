@@ -1,7 +1,6 @@
-﻿namespace CartAPI.Data.ValueObjects
+﻿namespace GeekShopping.CartAPI.Data.ValueObjects
 {
-
-    public class ProductVO 
+    public class ProductVO
     {
         public long Id { get; set; }
         public string Name { get; set; }

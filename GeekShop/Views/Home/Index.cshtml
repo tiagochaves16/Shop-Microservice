@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GeekShop.Models.ProductModel>
+﻿@model IEnumerable<GeekShop.Models.ProductViewModel>
 <form>
     <div class="container row">
         @foreach (var product in Model)
@@ -10,10 +10,8 @@
                         <div class="card-body">
                             <h3 class="card-title text-success">@product.SubstringName()</h3>
                             <span class="badge badge-light mb-2">@product.CategoryName</span>
-
-                            <p class="card-text">@Html.Raw(product.SubstrinDescription())</p>
-
-
+@*                            <p class="card-text">@Html.Raw(product.SubstringDescription())</p>
+*@
                             <div class="row">
                                 <div class="col pt-1">
                                     <span style="font-size:23px;">@string.Format("{0:c}", product.Price)</span>

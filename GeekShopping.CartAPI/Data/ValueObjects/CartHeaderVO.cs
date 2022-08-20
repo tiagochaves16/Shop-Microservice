@@ -1,4 +1,5 @@
-﻿using CartAPI.Model.Base;
+﻿using GeekShopping.CartAPI.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeekShopping.CartAPI.Data.ValueObjects
 {

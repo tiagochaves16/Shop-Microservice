@@ -1,13 +1,18 @@
 using AutoMapper;
-using CartAPI.Config;
-using CartAPI.Model.Context;
+using GeekShopping.CartAPI.Config;
+using GeekShopping.CartAPI.Model.Context;
 using GeekShopping.CartAPI.Repository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSqlServer<BaseContext>(
+builder.Services.AddSqlServer<SQLContext>(
     builder.Configuration["ConnectionString:CartAPIMicroservice"]);
 
 builder.Services.AddControllers();
@@ -40,6 +45,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeekShopping.CartAPI", Version = "v1" });
     c.EnableAnnotations();
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
