@@ -3,12 +3,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:36030",
+      "applicationUrl": "http://localhost:1226",
       "sslPort": 4430
     }
   },
   "profiles": {
-    "GeekShop": {
+    "Shopping_Web": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

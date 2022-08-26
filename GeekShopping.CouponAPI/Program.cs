@@ -2,8 +2,13 @@ using AutoMapper;
 using GeekShopping.CouponAPI.Config;
 using GeekShopping.CouponAPI.Model.Context;
 using GeekShopping.CouponAPI.Repository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
